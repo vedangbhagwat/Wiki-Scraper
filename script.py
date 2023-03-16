@@ -42,8 +42,7 @@ if response.status_code == 200:
     soup = BeautifulSoup(content , 'html.parser')
     tag = soup.find('table' , {'class':'infobox biography vcard'})
     name = tag.find('th', {'class':"infobox-above"}).text
-    info = tag.find_all('td', {'class':"infobox-data"})
-
+    
     birthname = tag.find('div', {'class':"nickname"}).text
     date = tag.find('span', {'class':"bday"}).text
     dob = datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%B %d, %Y')
