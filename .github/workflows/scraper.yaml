@@ -1,12 +1,12 @@
 name: Get personal Information
 
 on:
+  schedule:
+    - cron: '0 9 * * *'
   push:
     branches:
       - main
   workflow_dispatch:
-  schedule:
-    - cron: '0 9 * * *'
 
 jobs:
   scrape_info:
